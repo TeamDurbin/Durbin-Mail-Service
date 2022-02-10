@@ -41,8 +41,4 @@ jobs:
       #Step 2
       - name: Create CodeDeploy Deployment
         id: deploy 
-        run: aws deploy create-deployment \
-            --application-name Durbin-Mail-Service \
-            --deployment-group-name Durbin-Mail-Service-Group \
-            --deployment-config-name CodeDeployDefault.OneAtATime \
-            --github-location repository=${{github.repository}}, commitId=${{github.sha}}
+        run: aws deploy create-deployment --application-name Durbin-Mail-Service --deployment-group-name Durbin-Mail-Service-Group --deployment-config-name CodeDeployDefault.OneAtATime --github-location repository=${{github.repository}}, commitId=${{github.sha}}
